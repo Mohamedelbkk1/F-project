@@ -1,0 +1,85 @@
+*{
+    padding: 0;
+    margin: 0;
+    
+    background-color:rgb(139, 210, 243)
+}
+ul li{
+    list-style: none;
+}
+.checkbox{
+    text-decoration: line-through;
+    padding-right: 5px;
+    
+}
+
+input[type="checkbox"]{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+input{
+    
+    background-color: aliceblue;
+    color: black;
+    border-radius: 10px;
+    padding: 4px;
+    font-weight: bold;
+}
+
+conatiner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    
+   
+}
+h1{
+    color: aliceblue;
+    text-transform: capitalize;
+    font-size: 3.5rem;
+    margin: 1.5rem;
+    font-weight: bold;
+    font-family: monospace;
+}
+
+.parent{
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 50%;
+    margin: 0 auto;
+    transform: translateY(50%);
+
+    
+}
+.input_todo{
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 4px;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: 300px;
+}
+.input_ajt{
+    position: relative;
+    left: 220px;
+    bottom: 27.5px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 3.5px;
+    padding-left: 7px;
+    padding-right:7px ;
+}
+
+ul li{
+    color: aliceblue;
+    font-size: 1.2rem;
+    font-family: monospace;
+    margin-right: 10px;
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="cc3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+</head>
+<body>
+<container>
+    <div class="parent">
+        <h1>do it now</h1>
+        <input type="text" class="input_todo" placeholder="Entrer une nouvelle tache" id="input_todo">
+        <input type="submit" class="input_ajt" value="ajouter" onclick="addtassk()" >
+
+        <ul id="id_ul">
+        </ul>
+    </div>
+</container>
+    <script>
+        let verify=[]
+        function addtassk(){
+            let to_do=document.getElementById('input_todo').value.trim();
+            if(to_do===''){
+                alert("veuillez entrer une tache")
+                return
+            }
+
+             if(verify.includes(to_do)){
+                alert("ce tache deja existe")
+                return
+            }
+            verify.push(to_do)
+
+            //partie d'ajouter:
+            let ul=document.getElementById('id_ul');
+            let li=document.createElement('li');
+            li.textContent=to_do
+
+           //partie dyal checkbox:
+            let input=document.createElement('input')
+            input.type='checkbox';
+
+            input.addEventListener('click',function(event){
+              if(event.target.checked){           
+                    li.className='checkbox'
+                    setTimeout(function(){
+                        
+                        li.remove();
+                        verify.pop()
+                    },3000)
+                }
+            })
+            input.addEventListener('dblclick',function(event){
+                li.className='not_checkbox'
+            })
+            
+            //partie dyal suppresion:
+            let supp=document.createElement('input');
+            supp.type='submit'
+            supp.value='supprimer'
+            supp.addEventListener('click',function(event){
+                li.remove()
+                verify.pop()
+            })
+
+            li.appendChild(input)
+            ul.appendChild(li);
+            li.appendChild(supp)
+
+
+            document.getElementById('input_todo').value=""
+
+        }
+        
+        
+    </script>
+</body>
+</html>
